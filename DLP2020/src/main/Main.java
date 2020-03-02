@@ -27,7 +27,7 @@ import codegeneration.*;
  * - Para Generación de Código: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-    public static final String program = "entradas/Hipoteca.txt"; // Fichero de prueba durante el desarrollo
+    public static final String program = "entradas/source.txt"; // Fichero de prueba durante el desarrollo
 
     public static void main(String[] args) throws Exception {
         ErrorManager errorManager = new ErrorManager();

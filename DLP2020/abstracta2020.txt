@@ -27,20 +27,20 @@ ExprComparacion:Expresion -> expIzq:Expresion  operator:String expDrcha:Expresio
 ExprLogica:Expresion ->expIzq:Expresion  operator:String expDrcha:Expresion;
 ExprMenosUnario:Expresion -> expr:Expresion;
 ExprNot:Expresion -> expr:Expresion;
-AccesoArray:Expresion -> identificador:Expresion pos:Expresion;
+AccesoArray:Expresion -> identificador:Expresion posicion:Expresion;
 ExpresionCast:Expresion -> tipoCast:Tipo Expresion;
-AccesoStruct:Expresion -> Expresion nombre:String;
+AccesoStruct:Expresion -> Expresion identificador:String;
 ExpresionInvocacion:Expresion -> nombre:String argumentos:Expresion*;
 
-LiteralReal:Expresion -> valor:String;
-LiteralEntero:Expresion -> valor:String;
-LiteralChar:Expresion -> lexema:String;
+CTE_Real:Expresion -> valor:String;
+CTE_Entera:Expresion -> valor:String;
+CTE_Char:Expresion -> lexema:String;
 Variable:Expresion -> lexema:String;
 
 TipoInt:Tipo -> ;
 TipoStruct:Tipo -> identificador:String;
 TipoDouble:Tipo -> ;
 TipoChar:Tipo ->;
-TipoArray:Tipo -> tam:Integer tipoDe:Tipo;
+TipoArray:Tipo -> size:Integer tipoDe:Tipo;
 TipoVoid:Tipo -> ;
 TipoFuncion:Tipo -> tipoRetorno:Tipo defParametros:Definicion* ; 
