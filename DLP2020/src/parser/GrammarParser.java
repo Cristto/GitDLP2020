@@ -349,8 +349,8 @@ public class GrammarParser extends Parser {
 		try {
 			setState(87);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
-			case 1:
+			switch (_input.LA(1)) {
+			case IDENT:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(83);
@@ -358,11 +358,13 @@ public class GrammarParser extends Parser {
 				((ParametrosOpcContext)_localctx).list =  ((ParametrosOpcContext)_localctx).parametros.list;
 				}
 				break;
-			case 2:
+			case T__7:
 				enterOuterAlt(_localctx, 2);
 				{
 				}
 				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -399,22 +401,20 @@ public class GrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
+			setState(89);
+			((ParametrosContext)_localctx).p1 = parametro();
+			_localctx.list.add(((ParametrosContext)_localctx).p1.ast);
 			setState(97);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==IDENT) {
+			while (_la==T__8) {
 				{
-				{
-				setState(89);
-				((ParametrosContext)_localctx).p1 = parametro();
-				_localctx.list.add(((ParametrosContext)_localctx).p1.ast);
 				{
 				setState(91);
 				match(T__8);
 				setState(92);
 				((ParametrosContext)_localctx).p2 = parametro();
 				_localctx.list.add(((ParametrosContext)_localctx).p2.ast);
-				}
 				}
 				}
 				setState(99);
@@ -1460,7 +1460,7 @@ public class GrammarParser extends Parser {
 		"\5\20\u0139\n\20\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u0141\n\21\f\21\16"+
 		"\21\u0144\13\21\3\21\2\3\34\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36"+
 		" \2\6\3\2 !\4\2\36\36\"\"\4\2\34\35#&\3\2\'(\2\u015c\2\"\3\2\2\2\4+\3"+
-		"\2\2\2\6S\3\2\2\2\bY\3\2\2\2\nc\3\2\2\2\ff\3\2\2\2\16p\3\2\2\2\20s\3\2"+
+		"\2\2\2\6S\3\2\2\2\bY\3\2\2\2\n[\3\2\2\2\ff\3\2\2\2\16p\3\2\2\2\20s\3\2"+
 		"\2\2\22\177\3\2\2\2\24\u0082\3\2\2\2\26\u0096\3\2\2\2\30\u009d\3\2\2\2"+
 		"\32\u00e8\3\2\2\2\34\u010f\3\2\2\2\36\u0138\3\2\2\2 \u013a\3\2\2\2\"#"+
 		"\5\4\3\2#$\7\2\2\3$%\b\2\1\2%\3\3\2\2\2&\'\5\6\4\2\'(\b\3\1\2(*\3\2\2"+
@@ -1472,8 +1472,8 @@ public class GrammarParser extends Parser {
 		",\2\2HI\7\t\2\2IJ\5\b\5\2JK\7\n\2\2KL\7\4\2\2LM\5\26\f\2MN\7\7\2\2NO\5"+
 		"\16\b\2OP\5\30\r\2PQ\7\b\2\2QR\b\4\1\2RT\3\2\2\2S.\3\2\2\2S\65\3\2\2\2"+
 		"S=\3\2\2\2SG\3\2\2\2T\7\3\2\2\2UV\5\n\6\2VW\b\5\1\2WZ\3\2\2\2XZ\3\2\2"+
-		"\2YU\3\2\2\2YX\3\2\2\2Z\t\3\2\2\2[\\\5\f\7\2\\]\b\6\1\2]^\7\13\2\2^_\5"+
-		"\f\7\2_`\b\6\1\2`b\3\2\2\2a[\3\2\2\2be\3\2\2\2ca\3\2\2\2cd\3\2\2\2d\13"+
+		"\2YU\3\2\2\2YX\3\2\2\2Z\t\3\2\2\2[\\\5\f\7\2\\c\b\6\1\2]^\7\13\2\2^_\5"+
+		"\f\7\2_`\b\6\1\2`b\3\2\2\2a]\3\2\2\2be\3\2\2\2ca\3\2\2\2cd\3\2\2\2d\13"+
 		"\3\2\2\2ec\3\2\2\2fg\7,\2\2gh\7\4\2\2hi\5\26\f\2ij\b\7\1\2j\r\3\2\2\2"+
 		"kl\5\20\t\2lm\b\b\1\2mo\3\2\2\2nk\3\2\2\2or\3\2\2\2pn\3\2\2\2pq\3\2\2"+
 		"\2q\17\3\2\2\2rp\3\2\2\2st\7\3\2\2tu\7,\2\2uv\7\4\2\2vw\5\26\f\2wx\7\5"+

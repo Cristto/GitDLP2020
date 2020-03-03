@@ -29,7 +29,7 @@ parametrosOpc returns[List<DefVariable> list = new ArrayList<DefVariable>()]
     ;
 
 parametros returns[List<DefVariable> list = new ArrayList<DefVariable>()]
-    :		(p1=parametro {$list.add($p1.ast);} (',' p2=parametro {$list.add($p2.ast);}))*
+    :		p1=parametro {$list.add($p1.ast);} (',' p2=parametro {$list.add($p2.ast);})*
     ; 
     
 parametro returns[DefVariable ast]

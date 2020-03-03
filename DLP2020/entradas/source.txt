@@ -1,11 +1,29 @@
-var a: int;
-var b: char;
-var c: float;
+/*
+NOTA. Este ejemplo solo pretende mostrar la sintaxis del lenguaje mediante fragmentos de código inconexos. 
+No está pensado para ser ejecutado ya que realiza ninguna tarea concreta.
 
+Aclaraciones:
+- La sintaxis tiene que ser obligatoriamente la que se muestra en este ejemplo
+- Las declaraciones de funciones y variables globales pueden venir en cualquier orden.
+- Si la función no tiene valor de retorno no se pone nada entre los paréntesis de los parámetros y las llaves de las sentencias
+- Las funciones deben tener paréntesis aunque no tengan parámetros
+- Una función podrá declarar variables locales solo al inicio de su cuerpo. Por tanto no podrá haber declaración de variables locales en cualquier lugar de la función ni dentro de bloques anidados (por ejemplo el creado por un while)
+- No pueden aparecer expresiones como sentencias
+- Las llaves son obligatorias en el if/while aunque solo haya una sentencia dentro. También son obligatorios los paréntesis alrededor de la condición
+*/
 
+//// ------------------------------
+//// DEFINICIONES de datos y tipos
+
+// Tipos simples ---------
+var a:int;
+var b:char;
+
+// Arrays ---------
 var c:[5] float;
-var h:[3][2] float;
+var h:[3][2] float;  // Pueden ser más de 2 dimensiones
 
+// Structs ------------- 
 struct Direccion {
 	portal:int;
 	codigoPostal:int;
@@ -19,6 +37,7 @@ struct Persona {
 	direccion:Direccion;
 };
 
+// Combinación de Arrays y Structs -------------
 var f:[6] Persona;
 
 struct Empresa {
@@ -28,11 +47,11 @@ struct Empresa {
 
 var microsoft: Empresa;
 
-dobleSuma(a:int,b:float,c:int): int {
+//// ------------------------------
+//// DEFINICIONES de funciones
+
+dobleSuma(a:int, b:int): int {
 	var local:int;
-	var c: float;
-	
-	c = 45;
 
 	local = (a + b) * 2;
 	return local * 2;
