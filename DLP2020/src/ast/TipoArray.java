@@ -22,7 +22,8 @@ public class TipoArray extends AbstractTipo {
 	}
 
 	public TipoArray(Object size, Object tipoDe) {
-		this.size = (Integer) ((size instanceof ParserRuleContext) ? getAST(size) : size);
+		this.size = Integer.parseInt(((Token) size).getText()); //CAMBIO
+		//this.size = (Integer) ((size instanceof ParserRuleContext) ? getAST(size) : size);
 		this.tipoDe = (Tipo) ((tipoDe instanceof ParserRuleContext) ? getAST(tipoDe) : tipoDe);
 
        // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
