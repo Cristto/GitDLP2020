@@ -4,7 +4,7 @@
 
 package ast;
 
-import visitor.*;
+import visitor.Visitor;
 
 public interface AST {
 

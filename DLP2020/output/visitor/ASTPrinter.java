@@ -406,11 +406,11 @@ public class ASTPrinter extends DefaultVisitor {
 		return null;
 	}
 
-	//	class TipoDouble {  }
-	public Object visit(TipoDouble node, Object param) {
+	//	class TipoFloat {  }
+	public Object visit(TipoFloat node, Object param) {
 		int indent = ((Integer)param).intValue();
 
-		printName(indent, "TipoDouble", node, true);
+		printName(indent, "TipoFloat", node, true);
 
 		return null;
 	}

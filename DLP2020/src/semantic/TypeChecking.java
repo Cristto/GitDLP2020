@@ -5,9 +5,10 @@
 
 package semantic;
 
-import ast.*;
-import main.*;
-import visitor.*;
+import ast.AST;
+import ast.Position;
+import main.ErrorManager;
+import visitor.DefaultVisitor;
 
 public class TypeChecking extends DefaultVisitor {
 

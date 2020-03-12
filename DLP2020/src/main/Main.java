@@ -5,16 +5,19 @@
 
 package main;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
 
-import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 
-import ast.*;
-import visitor.*;
-
-import parser.*;
-import semantic.*;
-import codegeneration.*;
+import ast.AST;
+import codegeneration.CodeGeneration;
+import parser.GrammarLexer;
+import parser.GrammarParser;
+import semantic.SemanticAnalisys;
+import visitor.ASTPrinter;
 
 /**
  * Clase que inicia el compilador e invoca a todas sus fases.

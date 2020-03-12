@@ -5,7 +5,7 @@
 
 package main;
 
-import ast.*;
+import ast.Position;
 
 public class ErrorManager {
 

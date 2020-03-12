@@ -5,8 +5,8 @@
 
 package semantic;
 
-import main.*;
-import ast.*;
+import ast.AST;
+import main.ErrorManager;
 
 /**
  * Esta clase coordina las dos fases del Análisis Semántico:

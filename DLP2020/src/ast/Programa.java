@@ -4,10 +4,10 @@
 
 package ast;
 
-import java.util.*;
-import visitor.*;
+import java.util.List;
 
-import org.antlr.v4.runtime.*;
+import ast.definiciones.Definicion;
+import visitor.Visitor;
 
 //	programa -> definiciones:Definicion*
 

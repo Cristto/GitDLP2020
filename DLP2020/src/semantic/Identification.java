@@ -5,32 +5,41 @@
 
 package semantic;
 
-import ast.*;
-import main.*;
-import visitor.*;
+import ast.AST;
+import ast.Position;
+import ast.definiciones.DefVariable;
+import ast.definiciones.Definicion;
+import ast.expresiones.Variable;
+import main.ErrorManager;
+import visitor.DefaultVisitor;
 
 public class Identification extends DefaultVisitor {
+	
+	ContextMap<String, DefVariable> variables = new ContextMap<String, DefVariable>();
 
     public Identification(ErrorManager errorManager) {
         this.errorManager = errorManager;
     }
 
-    // # ----------------------------------------------------------
-    /*
-    * Poner aquí los visit.
-    *
-    * Si se ha usado VGen, solo hay que copiarlos de la clase 'visitor/_PlantillaParaVisitors.txt'.
-    */
+    
+//	class DefVariable { String nombre;  Tipo tipo; }
+	public Object visit(DefVariable node, Object param) {
 
-    // public Object visit(Program prog, Object param) {
-    //      ...
-    // }
+		// super.visit(node, param);
 
-    // ...
-    // ...
-    // ...
+		Definicion defVariable = variables.getFromTop(node.getNombre());
+		
+		
 
-    // # ----------------------------------------------------------
+		return null;
+	}
+	
+//	class Variable { String lexema; }
+	public Object visit(Variable node, Object param) {
+		return null;
+	}
+    
+
     // Métodos auxiliares recomendados (opcionales) -------------
 
     /**

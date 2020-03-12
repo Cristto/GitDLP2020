@@ -228,8 +228,8 @@ public class DefaultVisitor implements Visitor {
 		return null;
 	}
 
-	//	class TipoDouble {  }
-	public Object visit(TipoDouble node, Object param) {
+	//	class TipoFloat {  }
+	public Object visit(TipoFloat node, Object param) {
 		return null;
 	}
 

@@ -5,10 +5,12 @@
 
 package codegeneration;
 
-import java.io.*;
+import java.io.PrintWriter;
+import java.io.Writer;
 
-import ast.*;
-import visitor.*;
+import ast.AST;
+import ast.Position;
+import visitor.DefaultVisitor;
 
 public class CodeSelection extends DefaultVisitor {
 

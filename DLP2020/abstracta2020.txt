@@ -39,7 +39,7 @@ Variable:Expresion -> lexema:String;
 
 TipoInt:Tipo -> ;
 TipoStruct:Tipo -> identificador:String;
-TipoDouble:Tipo -> ;
+TipoFloat:Tipo -> ;
 TipoChar:Tipo ->;
 TipoArray:Tipo -> size:Integer tipoDe:Tipo;
 TipoVoid:Tipo -> ;

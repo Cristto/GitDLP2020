@@ -4,9 +4,11 @@
 
 package ast;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
-import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.Token;
 
 public abstract class AbstractAST implements AST {
 

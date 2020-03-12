@@ -5,9 +5,9 @@
 
 package codegeneration;
 
-import java.io.*;
+import java.io.Writer;
 
-import ast.*;
+import ast.AST;
 
 /**
  * Esta clase coordina las dos fases principales de la Generación de Código:

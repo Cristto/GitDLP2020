@@ -5,6 +5,10 @@ import Lexicon
 
 @parser::header {
     import ast.*;
+    import ast.definiciones.*;
+    import ast.expresiones.*;
+    import ast.sentencias.*;
+    import ast.tipos.*;
     
 }
 
@@ -57,7 +61,7 @@ campo returns[DefCampoStruct ast]
 tipo returns[Tipo ast]
   :  	   'int'  						{$ast = new TipoInt();} 
   |	       'char'  						{$ast = new TipoChar();}
-  |	       'float'                		{$ast = new TipoDouble();}
+  |	       'float'                		{$ast = new TipoFloat();}
   |   		'[' INT_CONSTANT ']' tipo  	{$ast = new TipoArray($INT_CONSTANT,$tipo.ast);}
   |	  		IDENT					 	{$ast = new TipoStruct($IDENT);}
   ;

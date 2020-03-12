@@ -1,17 +1,66 @@
 // Generated from src\parser\Grammar.g4 by ANTLR 4.7.2
 package parser;
 
-    import ast.*;
-    
-
-import org.antlr.v4.runtime.atn.*;
-import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
-import org.antlr.v4.runtime.tree.*;
+    import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
+
+import org.antlr.v4.runtime.FailedPredicateException;
+import org.antlr.v4.runtime.NoViableAltException;
+import org.antlr.v4.runtime.Parser;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.RuleContext;
+import org.antlr.v4.runtime.RuntimeMetaData;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.Vocabulary;
+import org.antlr.v4.runtime.VocabularyImpl;
+import org.antlr.v4.runtime.atn.ATN;
+import org.antlr.v4.runtime.atn.ATNDeserializer;
+import org.antlr.v4.runtime.atn.ParserATNSimulator;
+import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
+import ast.Programa;
+import ast.definiciones.DefCampoStruct;
+import ast.definiciones.DefFuncion;
+import ast.definiciones.DefStruct;
+import ast.definiciones.DefVariable;
+import ast.definiciones.Definicion;
+import ast.expresiones.AccesoArray;
+import ast.expresiones.AccesoStruct;
+import ast.expresiones.Asignacion;
+import ast.expresiones.CTE_Char;
+import ast.expresiones.CTE_Entera;
+import ast.expresiones.CTE_Real;
+import ast.expresiones.ExprAritmetica;
+import ast.expresiones.ExprComparacion;
+import ast.expresiones.ExprLogica;
+import ast.expresiones.ExprMenosUnario;
+import ast.expresiones.ExprNot;
+import ast.expresiones.Expresion;
+import ast.expresiones.ExpresionCast;
+import ast.expresiones.ExpresionInvocacion;
+import ast.expresiones.Variable;
+import ast.sentencias.If;
+import ast.sentencias.IfElse;
+import ast.sentencias.InvocacionProcedimiento;
+import ast.sentencias.Print;
+import ast.sentencias.PrintLn;
+import ast.sentencias.PrintSp;
+import ast.sentencias.Read;
+import ast.sentencias.Return;
+import ast.sentencias.Sentencia;
+import ast.sentencias.While;
+import ast.tipos.Tipo;
+import ast.tipos.TipoArray;
+import ast.tipos.TipoChar;
+import ast.tipos.TipoFloat;
+import ast.tipos.TipoFuncion;
+import ast.tipos.TipoInt;
+import ast.tipos.TipoStruct;
+import ast.tipos.TipoVoid;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class GrammarParser extends Parser {
@@ -704,7 +753,7 @@ public class GrammarParser extends Parser {
 				{
 				setState(138);
 				match(T__11);
-				((TipoContext)_localctx).ast =  new TipoDouble();
+				((TipoContext)_localctx).ast =  new TipoFloat();
 				}
 				break;
 			case T__12:
