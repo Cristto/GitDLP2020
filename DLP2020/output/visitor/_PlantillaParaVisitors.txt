@@ -366,7 +366,7 @@ public class <nombre clase> extends DefaultVisitor {
 		return null;
 	}
 
-	//	class Variable { String lexema; }
+	//	class Variable { String nombre; }
 	public Object visit(Variable node, Object param) {
 		return null;
 	}

@@ -6,29 +6,38 @@ package ast.expresiones;
 
 import org.antlr.v4.runtime.Token;
 
+import ast.definiciones.Definicion;
 import visitor.Visitor;
 
-//	Variable:Expresion -> lexema:String
+//	Variable:Expresion -> nombre:String
 
 public class Variable extends AbstractExpresion {
 
-	public Variable(String lexema) {
-		this.lexema = lexema;
+	public Variable(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public Variable(Object lexema) {
-		this.lexema = (lexema instanceof Token) ? ((Token)lexema).getText() : (String) lexema;
+	public Variable(Object nombre) {
+		this.nombre = (nombre instanceof Token) ? ((Token)nombre).getText() : (String) nombre;
 
        // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
        // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(lexema);
+       setPositions(nombre);
 	}
 
-	public String getLexema() {
-		return lexema;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setLexema(String lexema) {
-		this.lexema = lexema;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setDefinicion(Definicion definicion) {
+		this.definicion = definicion;
+	}
+	
+	public Definicion getDefinicion() {
+		return definicion;
 	}
 
 	@Override
@@ -36,9 +45,10 @@ public class Variable extends AbstractExpresion {
 		return v.visit(this, param);
 	}
 
-	private String lexema;
+	private String nombre;
+	private Definicion definicion;
 
 	public String toString() {
-       return "{lexema:" + getLexema() + "}";
+       return "{nombre:" + getNombre() + "}";
    }
 }

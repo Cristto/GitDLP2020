@@ -213,7 +213,7 @@ public class DefaultVisitor implements Visitor {
 		return null;
 	}
 
-	//	class Variable { String lexema; }
+	//	class Variable { String nombre; }
 	public Object visit(Variable node, Object param) {
 		return null;
 	}

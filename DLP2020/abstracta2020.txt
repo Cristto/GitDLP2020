@@ -35,7 +35,7 @@ ExpresionInvocacion:Expresion -> nombre:String argumentos:Expresion*;
 CTE_Real:Expresion -> valor:String;
 CTE_Entera:Expresion -> valor:String;
 CTE_Char:Expresion -> lexema:String;
-Variable:Expresion -> lexema:String;
+Variable:Expresion -> nombre:String;
 
 TipoInt:Tipo -> ;
 TipoStruct:Tipo -> identificador:String;

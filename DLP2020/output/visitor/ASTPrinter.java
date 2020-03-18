@@ -381,11 +381,11 @@ public class ASTPrinter extends DefaultVisitor {
 		return null;
 	}
 
-	//	class Variable { String lexema; }
+	//	class Variable { String nombre; }
 	public Object visit(Variable node, Object param) {
 		int indent = ((Integer)param).intValue();
 
-		printCompact(indent, "Variable", node, "lexema", node.getLexema());
+		printCompact(indent, "Variable", node, "nombre", node.getNombre());
 		return null;
 	}
 

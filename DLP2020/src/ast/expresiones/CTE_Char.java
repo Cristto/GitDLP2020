@@ -4,9 +4,9 @@
 
 package ast.expresiones;
 
-import org.antlr.v4.runtime.Token;
+import visitor.*;
 
-import visitor.Visitor;
+import org.antlr.v4.runtime.*;
 
 //	CTE_Char:Expresion -> lexema:String
 

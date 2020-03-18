@@ -4,52 +4,14 @@
 
 package visitor;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
-import ast.AST;
-import ast.Position;
-import ast.Programa;
-import ast.definiciones.DefCampoStruct;
-import ast.definiciones.DefFuncion;
-import ast.definiciones.DefStruct;
-import ast.definiciones.DefVariable;
-import ast.expresiones.AccesoArray;
-import ast.expresiones.AccesoStruct;
-import ast.expresiones.Asignacion;
-import ast.expresiones.CTE_Char;
-import ast.expresiones.CTE_Entera;
-import ast.expresiones.CTE_Real;
-import ast.expresiones.ExprAritmetica;
-import ast.expresiones.ExprComparacion;
-import ast.expresiones.ExprLogica;
-import ast.expresiones.ExprMenosUnario;
-import ast.expresiones.ExprNot;
-import ast.expresiones.ExpresionCast;
-import ast.expresiones.ExpresionInvocacion;
-import ast.expresiones.Variable;
-import ast.sentencias.If;
-import ast.sentencias.IfElse;
-import ast.sentencias.InvocacionProcedimiento;
-import ast.sentencias.Print;
-import ast.sentencias.PrintLn;
-import ast.sentencias.PrintSp;
-import ast.sentencias.Read;
-import ast.sentencias.Return;
-import ast.sentencias.While;
-import ast.tipos.TipoArray;
-import ast.tipos.TipoChar;
-import ast.tipos.TipoFloat;
-import ast.tipos.TipoFuncion;
-import ast.tipos.TipoInt;
-import ast.tipos.TipoStruct;
-import ast.tipos.TipoVoid;
+import ast.*;
+import ast.definiciones.*;
+import ast.expresiones.*;
+import ast.sentencias.*;
+import ast.tipos.*;
+import java.util.*;
 
 /**
  * ASTPrinter. Utilidad que ayuda a validar un arbol AST:
@@ -423,11 +385,11 @@ public class ASTPrinter extends DefaultVisitor {
 		return null;
 	}
 
-	//	class Variable { String lexema; }
+	//	class Variable { String nombre; }
 	public Object visit(Variable node, Object param) {
 		int indent = ((Integer)param).intValue();
 
-		printCompact(indent, "Variable", node, "lexema", node.getLexema());
+		printCompact(indent, "Variable", node, "nombre", node.getNombre());
 		return null;
 	}
 

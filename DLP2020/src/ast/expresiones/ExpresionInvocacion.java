@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.antlr.v4.runtime.Token;
 
+import ast.definiciones.Definicion;
 import visitor.Visitor;
 
 //	ExpresionInvocacion:Expresion -> nombre:String  argumentos:Expresion*
@@ -51,9 +52,17 @@ public class ExpresionInvocacion extends AbstractExpresion {
 	public Object accept(Visitor v, Object param) { 
 		return v.visit(this, param);
 	}
+	
+	public Definicion getDefinicion() {
+		return definicion;
+	}
+	public void setDefinicion(Definicion definicion) {
+		this.definicion = definicion;
+	}
 
 	private String nombre;
 	private List<Expresion> argumentos;
+	private Definicion definicion;
 
 	public String toString() {
        return "{nombre:" + getNombre() + ", argumentos:" + getArgumentos() + "}";
