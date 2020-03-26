@@ -43,7 +43,7 @@ public class Identification extends DefaultVisitor {
 		if (defVariable == null)
 			variables.put(node.getNombre(), node);
 		else
-			predicado(false, "La variable " + node.getNombre() + " ya está definida.", node.getStart());
+			predicado(false, "La variable " + node.getNombre() + " ya esta definida.", node.getStart());
 
 		super.visit(node, param);
 
