@@ -23,7 +23,7 @@ definiciones returns[List<Definicion> list = new ArrayList<Definicion>()]
 definicion  returns[Definicion ast]                                              
 	:       'var' IDENT ':' tipo ';'      											{$ast = new DefVariable($IDENT,$tipo.ast);}									          						  	
 	|		'struct' IDENT '{' campos '}' ';'							  	    	{$ast = new DefStruct($IDENT,$campos.list,new TipoStruct($IDENT));}
-	|		IDENT '(' parametrosOpc ')' '{' varLocales listaSentencias '}'         	{$ast = new DefFuncion($IDENT,new TipoFuncion(new TipoVoid(),$parametrosOpc.list),$varLocales.list,$listaSentencias.list);}
+	|		IDENT '(' parametrosOpc ')' '{' varLocales listaSentencias '}'         	{$ast = new DefFuncion($IDENT,new TipoFuncion(TipoVoid.getInstance(),$parametrosOpc.list),$varLocales.list,$listaSentencias.list);}
 	|		IDENT '(' parametrosOpc ')' ':' tipo '{' varLocales listaSentencias '}' {$ast = new DefFuncion($IDENT,new TipoFuncion($tipo.ast,$parametrosOpc.list),$varLocales.list,$listaSentencias.list);}
 	;
 	
@@ -57,11 +57,15 @@ campo returns[DefCampoStruct ast]
   : IDENT ':' tipo ';'    {$ast = new DefCampoStruct($IDENT,$tipo.ast);}
   ;
 
+tipoSimple returns[Tipo ast]
+	:	'int'		{$ast = TipoInt.getInstance();}
+	|	'char'		{$ast = TipoChar.getInstance();}
+	|	'float'		{$ast = TipoFloat.getInstance();}
+	;
+
 	
 tipo returns[Tipo ast]
-  :  	   'int'  						{$ast = new TipoInt();} 
-  |	       'char'  						{$ast = new TipoChar();}
-  |	       'float'                		{$ast = new TipoFloat();}
+  :  	    tipoSimple					{$ast = $tipoSimple.ast;}
   |   		'[' INT_CONSTANT ']' tipo  	{$ast = new TipoArray($INT_CONSTANT,$tipo.ast);}
   |	  		IDENT					 	{$ast = new TipoStruct($IDENT);}
   ;

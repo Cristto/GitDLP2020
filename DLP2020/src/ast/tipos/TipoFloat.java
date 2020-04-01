@@ -10,13 +10,25 @@ import visitor.Visitor;
 
 public class TipoFloat extends AbstractTipo {
 
+	private static TipoFloat instance = new TipoFloat();
+
+    private TipoFloat() {
+
+    }
+
+    public static TipoFloat getInstance() {
+
+	return instance;
+
+    }
+
 	@Override
 	public Object accept(Visitor v, Object param) { 
 		return v.visit(this, param);
 	}
-
-
-	public String toString() {
-       return "{TipoFloat}";
-   }
+	
+	@Override
+    public String getNombreMapl() {
+	return "float";
+    }
 }

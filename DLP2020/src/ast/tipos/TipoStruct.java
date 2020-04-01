@@ -7,6 +7,7 @@ package ast.tipos;
 import org.antlr.v4.runtime.Token;
 
 import ast.definiciones.Definicion;
+import ast.definiciones.DefStruct;
 import visitor.Visitor;
 
 //	TipoStruct:Tipo -> identificador:String
@@ -47,6 +48,16 @@ public class TipoStruct extends AbstractTipo {
 
 	private String identificador;
 	private Definicion definicion;
+	
+	 @Override
+	    public String getNombreMapl() {
+		String res = "{";
+		for (Definicion c : ((DefStruct) definicion).getCampos()) {
+		    res += c.getNombre() + ":" + c.getTipo().getNombreMapl() + " ";
+		}
+		res += "}";
+		return res;
+	    }
 
 	public String toString() {
        return "{identificador:" + getIdentificador() + "}";

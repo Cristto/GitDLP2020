@@ -7,5 +7,7 @@ package ast.tipos;
 import ast.AST;
 
 public interface Tipo extends AST {
+	
+	String getNombreMapl();
 
 }
