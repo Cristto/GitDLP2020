@@ -1,739 +1,1862 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
-	<title>Attribute Grammar (VGen)</title>
-	<meta name="generator" content="LibreOffice 6.1.3.2 (Windows)"/>
-	<meta name="author" content="Pablo Romero"/>
-	<meta name="created" content="2019-12-17T18:51:00"/>
-	<meta name="changed" content="2020-03-30T23:46:32.370000000"/>
-	<meta name="" content=""/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type="text/css">
-		td p { font-family: "Cambria", "Cochin", "Georgia", "Times", "Times New Roman", serif }
-		p { font-family: "Cambria", "Cochin", "Georgia", "Times", "Times New Roman", serif }
-		h2.cjk { font-family: "NSimSun" }
-		h2.ctl { font-family: "Mangal" }
-		h3.cjk { font-family: "NSimSun" }
-		h3.ctl { font-family: "Mangal" }
-	</style>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="Attribute%20Grammar_archivos/filelist.xml">
+<title>Attribute Grammar (VGen)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Cristo</o:Author>
+  <o:LastAuthor>Cristo</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>173</o:TotalTime>
+  <o:Created>2020-04-12T15:25:00Z</o:Created>
+  <o:LastSaved>2020-04-12T18:18:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>743</o:Words>
+  <o:Characters>4091</o:Characters>
+  <o:Lines>34</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>4825</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="Attribute%20Grammar_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Attribute%20Grammar_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>120</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="377">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link Error"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Título 2 Car";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Título 3 Car";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+span.Ttulo2Car
+	{mso-style-name:"Título 2 Car";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Título 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.Ttulo3Car
+	{mso-style-name:"Título 3 Car";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Título 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#1F3763;
+	mso-themecolor:accent1;
+	mso-themeshade:127;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]-->
+<meta name=author content="Pablo Romero">
+<meta name=created content="2019-12-17T18:51:00">
+<meta name=changed content="2020-03-30T23:46:32.370000000">
+<meta name="" content="">
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
 </head>
-<body lang="es-ES" dir="ltr"><h2 class="western">Attribute Grammar</h2>
-<table width="1119" cellpadding="2" cellspacing="0">
-	<col width="535"/>
 
-	<col width="295"/>
+<body lang=ES style='tab-interval:35.4pt'>
 
-	<col width="275"/>
+<div class=WordSection1>
 
-	<tr bgcolor="#8db3e2" style="background: #8db3e2">
-		<td width="535" style="border: 1px solid #808080; padding: 0.05cm"><p>
-			<strong>&nbsp;Nodo</strong></p>
-		</td>
-		<td width="295" style="border: 1px solid #808080; padding: 0.05cm"><p>
-			<strong>&nbsp;Predicados&nbsp;</strong></p>
-		</td>
-		<td width="275" style="border: 1px solid #808080; padding: 0.05cm"><p>
-			<strong>&nbsp;Reglas&nbsp;Sem&aacute;nticas&nbsp;</strong></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>programa</b></font>&nbsp;&rarr;
-			<i>definiciones</i><font color="#808080">:Definicion*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
+<h2><span style='mso-fareast-font-family:"Times New Roman"'>Attribute Grammar<o:p></o:p></span></h2>
 
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>DefVariable</b></font>:<font color="#808080">Definicion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font> <i>tipo</i><font color="#808080">:Tipo</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>DefFuncion</b></font>:<font color="#808080">Definicion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font> <i>tipo</i><font color="#808080">:Tipo</font>
-			<i>defVariableLocal</i><font color="#808080">:Definicion*</font>
-			<i>sentencias</i><font color="#808080">:Sentencia*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">DefFuncion.sentencias<font size="1" style="font-size: 8pt">i=</font>DefFuncion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>DefStruct</b></font>:<font color="#808080">Definicion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font>
-			<i>campos</i><font color="#808080">:Definicion*</font> <i>tipo</i><font color="#808080">:Tipo</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>DefCampoStruct</b></font>:<font color="#808080">Definicion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font> <i>tipo</i><font color="#808080">:Tipo</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>Print</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expresion.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>PrintLn</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expresion.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>PrintSp</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expresion.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>Asignacion</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expIzq</i><font color="#808080">:Expresion</font>
-			<i>expDrcha</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expIzq.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">mismoTipo(expIzq.tipo,expDrcha.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">expIzq.modificable==true</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>If</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>condicion</i><font color="#808080">:Expresion</font>
-			<i>sentenciasIf</i><font color="#808080">:Sentencia*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Condicion.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">sentencias<font size="1" style="font-size: 8pt">i.</font>funcion=If.funcion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>IfElse</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>condicion</i><font color="#808080">:Expresion</font>
-			<i>sentenciasIf</i><font color="#808080">:Sentencia*</font>
-			<i>sentenciasElse</i><font color="#808080">:Sentencia*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Condicion.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">sentencias<font size="1" style="font-size: 8pt">i.</font>funcion=IfElse.funcion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>While</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>condicion</i><font color="#808080">:Expresion</font>
-			<i>sentencias</i><font color="#808080">:Sentencia*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Condicion.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">sentencias<font size="1" style="font-size: 8pt">i.</font>funcion=While.funcion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>InvocacionProcedimiento</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font>
-			<i>argumentos</i><font color="#808080">:Expresion*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">|InvocacionProcedimiento.argumentos|==|InvocacionProcedimiento.definicion.defParametros|</font></p>
-			<p><font size="3" style="font-size: 12pt">argumentos<font size="1" style="font-size: 8pt">i</font>.tipo==<span style="text-decoration: none">InvocacionProcedimiento.definicion.defParametros</span><font size="1" style="font-size: 8pt"><span style="text-decoration: none">i</span></font><span style="text-decoration: none">.tipo</span></font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>Return</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expresion.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">SI
-			Return.funcion.tipo==null</font></p>
-			<p>      <font size="3" style="font-size: 12pt">Return.tipo=null</font></p>
-			<p><font size="3" style="font-size: 12pt">SINO </font>
-			</p>
-			<p>      <font size="3" style="font-size: 12pt">Return.tipo=Return.funcion.tipo</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>Read</b></font>:<font color="#808080">Sentencia</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(tipo.expresion)</font></p>
-			<p><font size="3" style="font-size: 12pt">expresion.modificable==true</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExprAritmetica</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expIzq</i><font color="#808080">:Expresion</font>
-			<i>operator</i><font color="#808080">:String</font>
-			<i>expDrcha</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">mismoTipo(expIzq.tipo,expDrcha.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">esNumerico(expIzq.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExprAritmetica.tipo=exprIzq.tipo</font></p>
-			<p><font size="3" style="font-size: 12pt">ExprAritmetica.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExprComparacion</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expIzq</i><font color="#808080">:Expresion</font>
-			<i>operator</i><font color="#808080">:String</font>
-			<i>expDrcha</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">mismoTipo(expIzq.tipo,expDrcha.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">esNumerico(expIzq.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExprComparacion.tipo=TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">ExprAritmetica.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExprLogica</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expIzq</i><font color="#808080">:Expresion</font>
-			<i>operator</i><font color="#808080">:String</font>
-			<i>expDrcha</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExpIzq.tipo==TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">expDrcha.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExprLogica.tipo=TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">ExprAritmetica.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExprMenosUnario</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expr</i><font color="#808080">:Expresion</font><font color="#808080"><font size="3" style="font-size: 12pt">esTipoSimple(tipo)</font></font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expr.tipo)</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">SI (expr.tipo==TipoChar)</font></p>
-			<p>       <font size="3" style="font-size: 12pt">ExprMenosUnario.tipo=TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">SINO</font></p>
-			<p>        <font size="3" style="font-size: 12pt">ExprMenosUnario.tipo=expr.tipo</font></p>
-			<p><font size="3" style="font-size: 12pt">ExprAritmetica.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExprNot</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expr</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Expr.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExprNot.tipo=TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">ExprAritmetica.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>AccesoArray</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>identificador</i><font color="#808080">:Expresion</font>
-			<i>posicion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">identificador.tipo==TipoArray</font></p>
-			<p><font size="3" style="font-size: 12pt">posicion.tipo==TipoInt</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">AccesoArray.tipo=identificador.tipo.tipoDe</font></p>
-			<p><font size="3" style="font-size: 12pt">AccesoArray.modificable=true</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExpresionCast</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>tipoCast</i><font color="#808080">:Tipo</font>
-			<i>expresion</i><font color="#808080">:Expresion</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">esTipoSimple(expresion.tipo)</font></p>
-			<p><font size="3" style="font-size: 12pt">esTipoSimple(tipoCast)</font></p>
-			<p><font size="3" style="font-size: 12pt">expresion.tipo&ne;tipoCast</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExpresionCast.tipo=tipoCast</font></p>
-			<p><font size="3" style="font-size: 12pt">ExpresionModificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>AccesoStruct</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>expresion</i><font color="#808080">:Expresion</font>
-			<i>identificador</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Expresion.tipo==TipoStruct</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">AccesoStruct.tipo=expresion.definicion.tipo</font></p>
-			<p><font size="3" style="font-size: 12pt">AccesoStruct.modificable=true</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>ExpresionInvocacion</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font>
-			<i>argumentos</i><font color="#808080">:Expresion*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">|ExpresionInvocacion.argumentos|==|ExpresionInvocacion.definicion.DefParametros|</font></p>
-			<p><font size="3" style="font-size: 12pt">ExpresionInvocacion.argumentos<font size="1" style="font-size: 8pt">i</font>.tipo==ExpresionInvocacion.definicion.defParametros<font size="1" style="font-size: 8pt">i</font>.tipo</font></p>
-			<p><font size="3" style="font-size: 12pt">ExpresionInvocacion.definicion.tipo&ne;null</font></p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">ExpresionInvocacion.tipo=
-			ExpresionInvocacion.definicion.tipo</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>CTE_Real</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>valor</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">CTE_Real.tipo=TipoFloat</font></p>
-			<p><font size="3" style="font-size: 12pt">CTE_Real.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>CTE_Entera</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>valor</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">CTE_Entera.tipo=TipoInt</font></p>
-			<p><font size="3" style="font-size: 12pt">CTE_Entera.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>CTE_Char</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>lexema</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">CTE_Char.tipo=TipoChar</font></p>
-			<p><font size="3" style="font-size: 12pt">CTE_Char.modificable=false</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>Variable</b></font>:<font color="#808080">Expresion</font>&nbsp;&rarr;
-			<i>nombre</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Variable.tipo=definicion.tipo</font></p>
-			<p><font size="3" style="font-size: 12pt">Variable.modificable=true</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoInt</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			&lambda;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoStruct</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			<i>identificador</i><font color="#808080">:String</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoFloat</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			&lambda;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoChar</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			&lambda;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoArray</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			<i>size</i><font color="#808080">:Integer</font> <i>tipoDe</i><font color="#808080">:Tipo</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoVoid</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			&lambda;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font color="#000000"><b>TipoFuncion</b></font>:<font color="#808080">Tipo</font>&nbsp;&rarr;
-			<i>tipoRetorno</i><font color="#808080">:Tipo</font>
-			<i>defParametros</i><font color="#808080">:Definicion*</font></p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			esTipoSimple(defParametros.tipo)</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td width="535" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;</p>
-		</td>
-		<td width="295" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-		<td width="275" style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=1242
+ style='width:931.25pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 1.5pt 1.5pt 1.5pt 1.5pt'>
+ <col width="535"/><col width="295"/><col width="275"/>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;mso-border-alt:
+  solid gray .75pt;background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><strong><span
+  style='font-family:"Cambria",serif'>&nbsp;Nodo</span></strong><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;mso-border-alt:
+  solid gray .75pt;background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><strong><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;Predicados&nbsp;</span></strong><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;mso-border-alt:
+  solid gray .75pt;background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><strong><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;Reglas&nbsp;Semánticas&nbsp;</span></strong><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>programa</span></b><span
+  style='font-family:"Cambria",serif'>&nbsp;&#8594; <i>definiciones</i><span
+  style='color:gray'>:Definicion*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>DefVariable</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Definicion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>tipo</i><span
+  style='color:gray'>:Tipo</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>DefFuncion</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Definicion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>tipo</i><span
+  style='color:gray'>:Tipo</span> <i>defVariableLocal</i><span
+  style='color:gray'>:Definicion*</span> <i>sentencias</i><span
+  style='color:gray'>:Sentencia*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  margin-left:35.4pt;text-indent:-35.4pt'><span style='font-family:"Cambria",serif'>tipo
+  </span>&#8712; { TipoInt, TipoFloat, TipoChar } OR tipo == null<span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>DefFuncion.sentencias</span><span
+  style='font-size:8.0pt;font-family:"Cambria",serif'>i=</span><span
+  style='font-family:"Cambria",serif'>DefFuncion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>DefStruct</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Definicion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>campos</i><span
+  style='color:gray'>:Definicion*</span> <i>tipo</i><span style='color:gray'>:Tipo</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>DefCampoStruct</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Definicion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>tipo</i><span
+  style='color:gray'>:Tipo</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>Print</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresión.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar }<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>PrintLn</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresión.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar }<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>PrintSp</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresión.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar }<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>Asignacion</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expIzq</i><span style='color:gray'>:Expresion</span> <i>expDrcha</i><span
+  style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo </span>&#8712; { TipoInt, TipoFloat,
+  TipoChar }<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo == expDrcha.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.modificable==true<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>If</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>condicion</i><span style='color:gray'>:Expresion</span> <i>sentenciasIf</i><span
+  style='color:gray'>:Sentencia*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Condicion.tipo==TipoInt<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>sentencias</span><span style='font-size:
+  8.0pt;font-family:"Cambria",serif'>i.</span><span style='font-family:"Cambria",serif'>funcion=If.funcion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>IfElse</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>condicion</i><span style='color:gray'>:Expresion</span> <i>sentenciasIf</i><span
+  style='color:gray'>:Sentencia*</span> <i>sentenciasElse</i><span
+  style='color:gray'>:Sentencia*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Condicion.tipo==TipoInt<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>sentencias</span><span style='font-size:
+  8.0pt;font-family:"Cambria",serif'>i.</span><span style='font-family:"Cambria",serif'>funcion=IfElse.funcion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>While</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>condicion</i><span style='color:gray'>:Expresion</span> <i>sentencias</i><span
+  style='color:gray'>:Sentencia*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Condicion.tipo==TipoInt<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>sentencias</span><span style='font-size:
+  8.0pt;font-family:"Cambria",serif'>i.</span><span style='font-family:"Cambria",serif'>funcion=While.funcion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>InvocacionProcedimiento</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>argumentos</i><span
+  style='color:gray'>:Expresion*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>|InvocacionProcedimiento.argumentos|==|InvocacionProcedimiento.definicion.defParametros|<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>argumentos</span><span style='font-size:
+  8.0pt;font-family:"Cambria",serif'>i</span><span style='font-family:"Cambria",serif'>.tipo==InvocacionProcedimiento.definicion.defParametros</span><span
+  style='font-size:8.0pt;font-family:"Cambria",serif'>i</span><span
+  style='font-family:"Cambria",serif'>.tipo<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>Return</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresión.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar}</p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>SI Return.funcion.tipo==null<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Return.tipo=null<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>SINO <o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Return.tipo=Return.funcion.tipo<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>Read</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Sentencia</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresión.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar}</p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresion.modificable==true<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:19'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExprAritmetica</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expIzq</i><span style='color:gray'>:Expresion</span> <i>operator</i><span
+  style='color:gray'>:String</span> <i>expDrcha</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo == expDrcha.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo </span>&#8712; { TipoInt, TipoFloat,
+  TipoChar}<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.tipo=exprIzq.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExprComparacion</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expIzq</i><span style='color:gray'>:Expresion</span> <i>operator</i><span
+  style='color:gray'>:String</span> <i>expDrcha</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo == expDrcha.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo == TipoInt OR expIzq.tipo ==
+  TipoFloat<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprComparacion.tipo=TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExprLogica</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expIzq</i><span style='color:gray'>:Expresion</span> <i>operator</i><span
+  style='color:gray'>:String</span> <i>expDrcha</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo==TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expDrcha.tipo==TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expIzq.tipo == expDrcha.tipo<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprLogica.tipo=TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExprMenosUnario</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expr</i><span style='color:gray'>:ExpresionesTipoSimple(tipo)</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expr.tipo </span>&#8712; { TipoInt, TipoFloat,
+  TipoChar}<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>SI (expr.tipo==TipoChar)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprMenosUnario.tipo=TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>SINO<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprMenosUnario.tipo=expr.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExprNot</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expr</i><span style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Expr.tipo==TipoInt<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprNot.tipo=TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExprAritmetica.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>AccesoArray</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>identificador</i><span style='color:gray'>:Expresion</span> <i>posicion</i><span
+  style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>identificador.tipo==TipoArray<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>posicion.tipo==TipoInt<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>AccesoArray.tipo=identificador.tipo.tipoDe<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>AccesoArray.modificable=true<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExpresionCast</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>tipoCast</i><span style='color:gray'>:Tipo</span> <i>expresion</i><span
+  style='color:gray'>:Expresion</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresion.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar}<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>tipoCast </span>&#8712; { TipoInt, TipoFloat,
+  TipoChar}<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>expresion.tipo&#8800;tipoCast<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExpresionCast.tipo=tipoCast<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExpresionModificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>AccesoStruct</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>expresion</i><span style='color:gray'>:Expresion</span> <i>identificador</i><span
+  style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Expresion.tipo==TipoStruct<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>AccesoStruct.tipo=expresion.definicion.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>AccesoStruct.modificable=true<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>ExpresionInvocacion</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span> <i>argumentos</i><span
+  style='color:gray'>:Expresion*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>|ExpresionInvocacion.argumentos|==|ExpresionInvocacion.definicion.DefParametros|<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExpresionInvocacion.argumentos</span><span
+  style='font-size:8.0pt;font-family:"Cambria",serif'>i</span><span
+  style='font-family:"Cambria",serif'>.tipo==ExpresionInvocacion.definicion.defParametros</span><span
+  style='font-size:8.0pt;font-family:"Cambria",serif'>i</span><span
+  style='font-family:"Cambria",serif'>.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExpresionInvocacion.definicion.tipo&#8800;null<o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>ExpresionInvocacion.tipo=
+  ExpresionInvocacion.definicion.tipo<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:28'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>CTE_Real</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>valor</i><span style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Real.tipo=TipoFloat<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Real.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>CTE_Entera</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>valor</i><span style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Entera.tipo=TipoInt<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Entera.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>CTE_Char</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>lexema</i><span style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Char.tipo=TipoChar<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>CTE_Char.modificable=false<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>Variable</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Expresion</span>&nbsp;&#8594;
+  <i>nombre</i><span style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Variable.tipo=definicion.tipo<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Variable.modificable=true<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:32'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:33'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoInt</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  &#955;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:34'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoStruct</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  <i>identificador</i><span style='color:gray'>:String</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:35'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoFloat</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  &#955;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:36'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoChar</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  &#955;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:37'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoArray</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  <i>size</i><span style='color:gray'>:Integer</span> <i>tipoDe</i><span
+  style='color:gray'>:Tipo</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:38'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoVoid</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  &#955;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:39'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b><span
+  style='font-family:"Cambria",serif;color:black'>TipoFuncion</span></b><span
+  style='font-family:"Cambria",serif'>:<span style='color:gray'>Tipo</span>&nbsp;&#8594;
+  <i>tipoRetorno</i><span style='color:gray'>:Tipo</span> <i>defParametros</i><span
+  style='color:gray'>:Definicion*</span><o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>defParametros.tipo </span>&#8712; { TipoInt,
+  TipoFloat, TipoChar}<span style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:40;mso-yfti-lastrow:yes'>
+  <td width=283 style='width:212.05pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=656 style='width:491.65pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+  <td width=303 style='width:227.55pt;border:solid gray 1.0pt;border-top:none;
+  mso-border-left-alt:solid gray .75pt;mso-border-bottom-alt:solid gray .75pt;
+  mso-border-right-alt:solid gray .75pt;padding:0cm 1.4pt 1.4pt 1.4pt'></td>
+ </tr>
 </table>
-<p><br/>
-Recordatorio de los operadores (para cortar y pegar): &rArr;
-&hArr; &ne; &empty; &isin; &notin; &cup; &cap; &sub; &nsub; &sum; &exist;
-&forall; 
-</p>
-<h3 class="western">Atributos</h3>
-<table cellpadding="2" cellspacing="0">
-	<tr bgcolor="#8db3e2" style="background: #8db3e2">
-		<td style="border: 1px solid #808080; padding: 0.05cm"><p>&nbsp;<strong>Categor&iacute;a
-			Sint&aacute;ctica</strong>&nbsp;</p>
-		</td>
-		<td style="border: 1px solid #808080; padding: 0.05cm"><p>&nbsp;<strong>Nombre
-			del atributo</strong>&nbsp;</p>
-		</td>
-		<td style="border: 1px solid #808080; padding: 0.05cm"><p>&nbsp;<strong>Tipo
-			Java</strong>&nbsp;</p>
-		</td>
-		<td style="border: 1px solid #808080; padding: 0.05cm"><p>&nbsp;<strong>Heredado/Sintetizado</strong>&nbsp;</p>
-		</td>
-		<td style="border: 1px solid #808080; padding: 0.05cm"><p>&nbsp;<strong>Descripci&oacute;n</strong>&nbsp;</p>
-		</td>
-	</tr>
-	<tr>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;<font size="3" style="font-size: 12pt">Expresion</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">tipo</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Tipo</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Sintetizado</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Tipo de la expresion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;<font size="3" style="font-size: 12pt">Expresion</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">modificable</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">boolean</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Sintetizado</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Para saber si la expresion
-			puede aparecer a la izquierda de una asignacion</font></p>
-		</td>
-	</tr>
-	<tr>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			&nbsp;<font size="3" style="font-size: 12pt">Sentencia</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Funcion</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">DefFuncion</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Heredado</font></p>
-		</td>
-		<td style="border-top: none; border-bottom: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
-			<font size="3" style="font-size: 12pt">Indica en que funcion
-			estamos</font></p>
-		</td>
-	</tr>
-</table>
-<p><br/>
-<br/>
 
-</p>
-<p><b>Funciones auxiliares</b></p>
-<p style="font-weight: normal">esTipoSimple(tipo)</p>
-<p style="font-weight: normal">esTipoNumerico(tipo)</p>
-<p style="font-weight: normal">mismoTipo(expresion,expresion)</p>
+<p><br>
+Recordatorio de los operadores (para cortar y pegar): &#8658; &#8660; &#8800; &#8709;
+&#8712; &#8713; &#8746; &#8745; &#8834; &#8836; &#8721; &#8707; &#8704; </p>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>Atributos<o:p></o:p></span></h3>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:solid gray 1.0pt;mso-border-alt:solid gray .75pt;
+  background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;<strong><span style='font-family:
+  "Cambria",serif;color:black;mso-color-alt:windowtext'>Categoría Sintáctica</span></strong><span
+  style='color:black;mso-color-alt:windowtext'>&nbsp;</span><o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;mso-border-alt:solid gray .75pt;
+  background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;<strong><span
+  style='font-family:"Cambria",serif'>Nombre del atributo</span></strong>&nbsp;</span><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;mso-border-alt:solid gray .75pt;
+  background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;<strong><span
+  style='font-family:"Cambria",serif'>Tipo Java</span></strong>&nbsp;</span><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;mso-border-alt:solid gray .75pt;
+  background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;<strong><span
+  style='font-family:"Cambria",serif'>Heredado/Sintetizado</span></strong>&nbsp;</span><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;mso-border-alt:solid gray .75pt;
+  background:#8DB3E2;padding:1.4pt 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif;color:black;mso-color-alt:windowtext'>&nbsp;<strong><span
+  style='font-family:"Cambria",serif'>Descripción</span></strong>&nbsp;</span><span
+  style='font-family:"Cambria",serif'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;Expresion<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>tipo<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Tipo<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Sintetizado<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Tipo de la expresion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;Expresion<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>modificable<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>boolean<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Sintetizado<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Para saber si la expresion puede aparecer
+  a la izquierda de una asignacion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>&nbsp;Sentencia<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Funcion<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>DefFuncion<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Heredado<o:p></o:p></span></p>
+  </td>
+  <td style='border:solid gray 1.0pt;border-top:none;mso-border-left-alt:solid gray .75pt;
+  mso-border-bottom-alt:solid gray .75pt;mso-border-right-alt:solid gray .75pt;
+  padding:0cm 1.4pt 1.4pt 1.4pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span
+  style='font-family:"Cambria",serif'>Indica en que funcion estamos<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><o:p>&nbsp;</o:p></p>
+
+</div>
+
 </body>
+
 </html>
