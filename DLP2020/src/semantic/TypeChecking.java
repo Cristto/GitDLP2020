@@ -196,16 +196,19 @@ public class TypeChecking extends DefaultVisitor {
 	public Object visit(Return node, Object param) {
 
 		super.visit(node, param); // primero compruebo que el return no este vacio
-
-		if (node.getExpresion() != null // quizas podria quitar esta linea, se comprueba antes
-
-				// comprueba que la expresion del return sea igual al objeto que retorna
-				&& !esMismoTipo(node.getExpresion().getTipo(), ((TipoFuncion) param).getTipoRetorno()))
+		
+		// comprueba que la expresion del return sea igual al objeto que retorna
+		if (node.getExpresion() != null && !esMismoTipo(node.getExpresion().getTipo(), ((TipoFuncion) param).getTipoRetorno()))
 			predicado(false, "Tipo de retorno no coincide", node.getStart());
 
-		// si es null compruebo si el tipoFUncion es igual al tipoVoid
-		if (node.getExpresion() == null && !esMismoTipo(((TipoFuncion) param).getTipoRetorno(), TipoVoid.getInstance()))
+		// si es null compruebo si el tipoFuncion es igual al tipoVoid
+		if (!esMismoTipo(((TipoFuncion) param).getTipoRetorno(), TipoVoid.getInstance()))
 			predicado(false, "El tipo de retorno no coincide", node.getStart());
+		
+		// la expresion de retorno tiene qe ser de tipo simple
+		if (node.getExpresion() != null && !esTipoSimple(node.getExpresion().getTipo()))
+			predicado(false, "La expresion de retorno no es de tipo simple", node.getStart());
+		
 		return null;
 	}
 
@@ -281,7 +284,7 @@ public class TypeChecking extends DefaultVisitor {
 		super.visit(node, param); // compruebo la expr
 
 		if (!esTipoAritmetico(node.getExpr().getTipo()))
-			predicado(false, "La expresion debe de ser de entero", node.getStart());
+			predicado(false, "La expresion debe de ser de tipo entero", node.getStart());
 
 		node.setTipo(node.getExpr().getTipo());
 		
