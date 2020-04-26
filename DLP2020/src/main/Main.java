@@ -30,11 +30,24 @@ import visitor.ASTPrinter;
  * - Para GeneraciÃ³n de CÃ³digo: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-   // public static final String program = "entradas/source.txt"; // Fichero de prueba durante el desarrollo
+	
+	//AVISO: hay un output para la carpeta tests y otro para la carpeta entradas
+	
+	//////la carpeta entrada 
+    // public static final String program = "entradas/source.txt"; // Fichero de prueba durante el desarrollo
+	public static final String program = "entradas/prueba.txt";  // prueba final
+	
+	
+	/////la carpeta tests
    // public static final String program = "tests/1. Funciones.txt";
    // public static final String program = "tests/2. Estructuras.txt";
    // public static final String program = "tests/3. Variables.txt";  
-	public static final String program = "tests/Test Comprobación de Tipos.txt";
+	//public static final String program = "tests/Test Comprobación de Tipos.txt";
+	//public static final String program = "tests/Test Generación de Código 1.txt";
+	//public static final String program = "tests/Test Generación de Código 2.txt";
+	//public static final String program = "tests/Test Generacion de Código 3.txt";
+	//public static final String program = "tests/Test Generación de Código 4.txt";
+	
     
     public static void main(String[] args) throws Exception {
         ErrorManager errorManager = new ErrorManager();

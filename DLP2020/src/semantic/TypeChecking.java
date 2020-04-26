@@ -202,7 +202,7 @@ public class TypeChecking extends DefaultVisitor {
 			predicado(false, "Tipo de retorno no coincide", node.getStart());
 
 		// si es null compruebo si el tipoFuncion es igual al tipoVoid
-		if (!esMismoTipo(((TipoFuncion) param).getTipoRetorno(), TipoVoid.getInstance()))
+		if (node.getExpresion() == null && !esMismoTipo(((TipoFuncion) param).getTipoRetorno(), TipoVoid.getInstance()))
 			predicado(false, "El tipo de retorno no coincide", node.getStart());
 		
 		// la expresion de retorno tiene qe ser de tipo simple
