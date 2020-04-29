@@ -65,13 +65,15 @@ public class Identification extends DefaultVisitor {
 	// class DefFuncion { String nombre; Tipo tipo; List<Definicion>
 	// defVariableLocal; List<Sentencia> sentencias; }
 	public Object visit(DefFuncion node, Object param) {
-
+		
+		//aqui buscas por key y metes valor al map
 		DefFuncion defFuncion = funciones.get(node.getNombre());
 		if(defFuncion == null)
 			funciones.put(node.getNombre(), node);
 		else
 			predicado(false, "la funcion "+node.getNombre()+" ya esta definida");
 		
+		//aqui lo de antes lo insertas en el contexto
 		variables.set(); //inserto el hashmap en el contexto
 		super.visit(node, param); //sigo recorriendo las varlocales y sentencias
 		variables.reset();  //saco de la pila
@@ -85,7 +87,7 @@ public class Identification extends DefaultVisitor {
 		DefFuncion defFuncion = funciones.get(node.getNombre());
 
 		if (defFuncion != null) {
-			//creo una variable definicion en el nodo para conocer el tipo que tienen
+			
 		    node.setDefinicion(defFuncion); // Enlazar referencia con definición
 		} else {
 		    predicado(false, "Procedimiento '" + node.getNombre() + "' no definido", node.getStart());

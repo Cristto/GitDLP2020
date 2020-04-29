@@ -1,88 +1,13 @@
-#source "prueba.txt"
+#source "mia.txt"
 call main
 halt
-#VAR pareja:{entero:int caracter:byte }
 #VAR acme:2*{empleados:2*{edad:int } }
 #VAR fibonacci:8*3*int
-p:
-enter 0
-RET 0,0,0
 f:
-enter 7
-
-#line 30
-push bp
-push -4
-add
-push bp
-push 6
-add
-loadf
-pushf 10.0
-mulf
-storef
-
-#line 31
-push bp
-push -5
-add
-pushb 48
-storeb
-
-#line 37
-push bp
-push 4
-add
-loadi
-pushi 256
-lti
-jz else0
-
-#line 33
-push bp
-push -5
-add
-push bp
-push 4
-add
-loadi
-i2b
-storeb
-
-#line 34
-push bp
-push -7
-add
-push bp
-push -5
-add
-loadb
-b2i
-storei
-jmp fin0
-else0:
-
-#line 37
-push bp
-push -7
-add
-push bp
-push -4
-add
-loadf
-f2i
-storei
-fin0:
-push bp
-push -7
-add
-loadi
-RET 2,7,6
-inicializa:
 enter 2
 
-#line 46
-pusha 11
+#line 16
+pusha 8
 pushi 0
 push 6
 mul
@@ -94,8 +19,8 @@ add
 pushi 0
 storei
 
-#line 47
-pusha 11
+#line 17
+pusha 8
 pushi 0
 push 6
 mul
@@ -107,8 +32,8 @@ add
 pushi 1
 storei
 
-#line 48
-pusha 11
+#line 18
+pusha 8
 pushi 0
 push 6
 mul
@@ -120,27 +45,9 @@ add
 pushi 1
 storei
 
-#line 49
-push bp
-push -2
-add
-pushi 1
-storei
-bucle0:
-push bp
-push -2
-add
-loadi
-pushi 8
-lti
-JZ finBucle0
-
-#line 51
-pusha 11
-push bp
-push -2
-add
-loadi
+#line 20
+pusha 8
+pushi 0
 push 6
 mul
 add
@@ -148,13 +55,8 @@ pushi 0
 push 2
 mul
 add
-pusha 11
-push bp
-push -2
-add
-loadi
-pushi 1
-subi
+pusha 8
+pushi 5
 push 6
 mul
 add
@@ -164,255 +66,14 @@ mul
 add
 loadi
 storei
-
-#line 52
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 1
-push 2
-mul
-add
-pusha 11
-push bp
-push -2
-add
-loadi
-pushi 1
-subi
-push 6
-mul
-add
-pushi 2
-push 2
-mul
-add
-loadi
-storei
-
-#line 53
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 2
-push 2
-mul
-add
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 0
-push 2
-mul
-add
-loadi
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 1
-push 2
-mul
-add
-loadi
-addi
-storei
-
-#line 54
-push bp
-push -2
-add
-push bp
-push -2
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle0
-finBucle0:
 RET 0,2,0
 main:
-enter 4
-#line 64
-call p
-
-#line 66
-push bp
-push -2
-add
-pushi 0
-storei
-
-#line 67
-pusha 0
-push 2
-add
-pushb 48
-storeb
-
-#line 68
-pusha 0
-push 0
-add
-pushb 48
-b2i
-storei
-
-#line 70
-push bp
-push -2
-add
-loadi
-i2f
-pusha 0
-push 2
-add
-loadb
-b2i
+enter 0
+#line 27
 call f
-outi
-pushb 10
-outb
-#line 71
-pushf 1.3
-pushi 2
-call f
-popi
-#line 73
-call inicializa
 
-#line 74
-push bp
-push -2
-add
-pushi 0
-storei
-bucle1:
-push bp
-push -2
-add
-loadi
-pushi 8
-lti
-JZ finBucle1
-
-#line 76
-pushb 40
-outb
-
-#line 77
-push bp
-push -2
-add
-loadi
-pushi 1
-addi
-outi
-
-#line 78
-pushb 41
-outb
-
-#line 79
-pushb 32
-outb
-
-#line 80
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 0
-push 2
-mul
-add
-loadi
-outi
-
-#line 81
-pushb 43
-outb
-
-#line 82
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 1
-push 2
-mul
-add
-loadi
-outi
-
-#line 83
-pushb 61
-outb
-
-#line 84
-pusha 11
-push bp
-push -2
-add
-loadi
-push 6
-mul
-add
-pushi 2
-push 2
-mul
-add
-loadi
-outi
-
-#line 85
-pushb 92
-outb
-
-#line 86
-push bp
-push -2
-add
-push bp
-push -2
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle1
-finBucle1:
-
-#line 89
-pusha 3
+#line 28
+pusha 0
 pushi 1
 push 4
 mul
@@ -427,195 +88,4 @@ push 0
 add
 pushi 56
 storei
-
-#line 90
-pusha 3
-pushi 1
-push 4
-mul
-add
-push 0
-add
-pushi 1
-push 2
-mul
-add
-push 0
-add
-loadi
-outi
-pushb 10
-outb
-
-#line 92
-push bp
-push -2
-add
-pushi 0
-storei
-bucle2:
-push bp
-push -2
-add
-loadi
-pushi 2
-lti
-JZ finBucle2
-
-#line 94
-push bp
-push -4
-add
-pushi 0
-storei
-bucle3:
-push bp
-push -4
-add
-loadi
-pushi 2
-lti
-JZ finBucle3
-
-#line 96
-pusha 3
-push bp
-push -2
-add
-loadi
-push 4
-mul
-add
-push 0
-add
-push bp
-push -4
-add
-loadi
-push 2
-mul
-add
-push 0
-add
-push bp
-push -2
-add
-loadi
-push bp
-push -4
-add
-loadi
-addi
-storei
-
-#line 97
-push bp
-push -4
-add
-push bp
-push -4
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle3
-finBucle3:
-
-#line 99
-push bp
-push -2
-add
-push bp
-push -2
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle2
-finBucle2:
-
-#line 103
-push bp
-push -2
-add
-pushi 0
-storei
-bucle4:
-push bp
-push -2
-add
-loadi
-pushi 2
-lti
-JZ finBucle4
-
-#line 105
-push bp
-push -4
-add
-pushi 0
-storei
-bucle5:
-push bp
-push -4
-add
-loadi
-pushi 2
-lti
-JZ finBucle5
-
-#line 107
-pusha 3
-push bp
-push -2
-add
-loadi
-push 4
-mul
-add
-push 0
-add
-push bp
-push -4
-add
-loadi
-push 2
-mul
-add
-push 0
-add
-loadi
-outi
-pushb 32
-outb
-
-#line 108
-push bp
-push -4
-add
-push bp
-push -4
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle5
-finBucle5:
-
-#line 110
-push bp
-push -2
-add
-push bp
-push -2
-add
-loadi
-pushi 1
-addi
-storei
-JMP bucle4
-finBucle4:
-RET 0,4,0
+RET 0,0,0

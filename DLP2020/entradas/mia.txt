@@ -1,0 +1,30 @@
+struct Empleado { edad:int; };
+
+struct Empresa { 
+	empleados:[2]Empleado;
+};
+
+
+var acme:[2]Empresa;
+
+
+var fibonacci:[8][3]int;
+
+f() {
+  var i:int;
+ 
+  fibonacci[0][0] = 0;
+  fibonacci[0][1] = 1;
+  fibonacci[0][2] = 1;
+
+    fibonacci[0][0] = fibonacci[5][1];
+
+    
+  
+}
+
+main(){
+f();
+acme[1].empleados[1].edad = 56;
+
+}

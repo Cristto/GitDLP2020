@@ -35,7 +35,8 @@ public class Main {
 	
 	//////la carpeta entrada 
     // public static final String program = "entradas/source.txt"; // Fichero de prueba durante el desarrollo
-	public static final String program = "entradas/prueba.txt";  // prueba final
+	//public static final String program = "entradas/prueba.txt";  // prueba final
+	public static final String program = "entradas/mia.txt";  // prueba final
 	
 	
 	/////la carpeta tests

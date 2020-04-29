@@ -124,8 +124,25 @@ public class CodeSelection extends DefaultVisitor {
 		}
 		visitChildren(node.getSentencias(), node);
 		if (((TipoFuncion) node.getTipo()).getTipoRetorno() instanceof TipoVoid)
+			//ret retorno + locales + parametros
 			out("RET 0," + totalLocales(node.getDefVariableLocal(), param) + ","
 					+ totalParams(((TipoFuncion) node.getTipo()).getDefParametros(), param));
+		return null;
+	}
+	
+	@Override
+	public Object visit(Return node, Object param) {
+		DefFuncion funcion = (DefFuncion) param;	
+
+		if (node.getExpresion() != null) {
+			node.getExpresion().accept(this, Funcion.VALOR);
+			out("RET " + node.getExpresion().getTipo().accept(new MemoryAllocation(), Funcion.TAM) + ","
+					+ totalLocales(funcion.getDefVariableLocal(), param) + ","
+					+ totalParams(((TipoFuncion) funcion.getTipo()).getDefParametros(), param));
+		} else {
+			out("RET 0, " + totalLocales(funcion.getDefVariableLocal(), param) + ","
+					+ totalParams(((TipoFuncion) funcion.getTipo()).getDefParametros(), param));
+		}
 		return null;
 	}
 
@@ -177,21 +194,6 @@ public class CodeSelection extends DefaultVisitor {
 		out("JMP bucle" + local);
 		out("finBucle" + local + ":");
 
-		return null;
-	}
-
-	@Override
-	public Object visit(Return node, Object param) {
-		DefFuncion funcion = (DefFuncion) param;
-		if (node.getExpresion() != null) {
-			node.getExpresion().accept(this, Funcion.VALOR);
-			out("RET " + node.getExpresion().getTipo().accept(new MemoryAllocation(), Funcion.TAM) + ","
-					+ totalLocales(funcion.getDefVariableLocal(), param) + ","
-					+ totalParams(((TipoFuncion) funcion.getTipo()).getDefParametros(), param));
-		} else {
-			out("RET 0, " + totalLocales(funcion.getDefVariableLocal(), param) + ","
-					+ totalParams(((TipoFuncion) funcion.getTipo()).getDefParametros(), param));
-		}
 		return null;
 	}
 
@@ -249,9 +251,9 @@ public class CodeSelection extends DefaultVisitor {
 		out("#line " + node.getEnd().getLine());
 		visitChildren(node.getArgumentos(), Funcion.VALOR);
 		out("call " + node.getNombre());
-		if (!(((TipoFuncion) node.getDefinicion().getTipo()).getTipoRetorno() instanceof TipoVoid)) {
-			TipoFuncion tipoFuncion = (TipoFuncion) node.getDefinicion().getTipo();
-			out("pop", tipoFuncion);
+		TipoFuncion tipoFuncion = ((TipoFuncion) node.getDefinicion().getTipo());
+		if(!(tipoFuncion.getTipoRetorno() instanceof TipoVoid)) {
+			out("pop", tipoFuncion.getTipoRetorno());
 		}
 
 		return null;
@@ -331,26 +333,37 @@ public class CodeSelection extends DefaultVisitor {
 
 	@Override
 	public Object visit(ExprMenosUnario node, Object param) {
-		/*
-		 * out("push 0"); node.getExpr().accept(this, Funcion.VALOR);
-		 * out(instruccion.get("-"));
-		 */
-		// pushf || pushi
-		out("push" + node.getTipo().accept(this, Funcion.SUFIJO));
-
-		if (node.getExpr() != null) {
-			node.getExpr().accept(this, Funcion.VALOR);
-		}
-
-		out(instruccion.get("-") + node.getExpr().getTipo().accept(this, Funcion.SUFIJO));
+		
+		if(node.getTipo() instanceof TipoInt)
+			out("pushi 0");
+		else
+			out("pushf 0.0");		
+		node.getExpr().accept(this, Funcion.VALOR);
+		out("sub",node.getExpr().getTipo());
+		
 		return null;
 	}
 
 	@Override
 	public Object visit(ExpresionCast node, Object param) {
+		
 		node.getExpresion().accept(this, Funcion.VALOR);
-		out(node.getExpresion().getTipo().accept(this, Funcion.SUFIJO) + "2"
-				+ node.getTipo().accept(this, Funcion.SUFIJO));
+		if(node.getTipoCast() instanceof TipoChar 
+				&& node.getExpresion().getTipo() instanceof TipoFloat) {
+			out("f2i");
+			out("i2b");			
+		}
+		else if(node.getTipoCast() instanceof TipoFloat 
+				&& node.getExpresion().getTipo() instanceof TipoChar) {
+			out("b2i");
+			out("i2f");
+		}
+		else {
+			out(node.getExpresion().getTipo().accept(this, Funcion.SUFIJO) + "2"
+					+ node.getTipo().accept(this, Funcion.SUFIJO));
+		}
+		
+		
 		return null;
 	}
 
@@ -364,10 +377,10 @@ public class CodeSelection extends DefaultVisitor {
 
 	@Override
 	public Object visit(Variable node, Object param) {
-		if (param == Funcion.VALOR) {
-			visit(node, Funcion.DIRECCION);
+		if (param == Funcion.VALOR) { //aqui es por valor
+			visit(node, Funcion.DIRECCION); //entra de nuevo por el y va al else y luego termina el if
 			out("load", node.getTipo());
-		} else {
+		} else { // aqui por direccion
 			if (locales.contains(node.getDefinicion())) {
 				out("push bp");
 				out("push " + node.getDefinicion().getDireccion());
